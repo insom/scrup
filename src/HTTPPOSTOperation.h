@@ -1,20 +1,20 @@
 @interface HTTPPOSTOperation : NSOperation {
-	NSString *path;
-	NSURL *url;
+	NSString *__strong path;
+	NSURL *__strong url;
 	NSMutableURLRequest *request;
-	NSHTTPURLResponse *response;
-	NSData *responseData;
-	id delegate;
+	NSHTTPURLResponse *__strong response;
+	NSData *__strong responseData;
+	id __strong delegate;
 	//NSTimeInterval connectionRetryInterval;
-	ASLLogger *log;
+	ASLLogger *__strong log;
 }
-@property(assign) NSString *path;
-@property(assign) NSURL *url;
-@property(assign) NSMutableURLRequest *request;
-@property(assign) NSHTTPURLResponse *response;
-@property(assign) NSData *responseData;
-@property(assign) id delegate;
-@property(assign) ASLLogger *log;
+@property(strong) NSString *path;
+@property(strong) NSURL *url;
+@property NSMutableURLRequest *request;
+@property(strong) NSHTTPURLResponse *response;
+@property(strong) NSData *responseData;
+@property(strong) id delegate;
+@property(strong) ASLLogger *log;
 -(id)initWithPath:(NSString *)path URL:(NSURL *)url delegate:(id)delegate;
 -(void)sendRequestAllowingRetries:(int)nretries;
 @end

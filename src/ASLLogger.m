@@ -68,14 +68,9 @@ static char *facility = NULL;
   return -1;
 }
 
-- (void)finalize {
-  asl_close(aslc);
-	[super finalize];
-}
 
 - (void)dealloc {
   asl_close(aslc);
-  [super dealloc];
 }
 
 @end
@@ -226,10 +221,9 @@ L(debug,    DEBUG)
 #undef L
 
 
-- (void)finalize {
+- (void)dealloc {
   module = nil;
   connection = nil;
-	[super finalize];
 }
 
 

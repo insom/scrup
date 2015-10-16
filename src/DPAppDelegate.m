@@ -1,5 +1,5 @@
 #import "DPAppDelegate.h"
-#import "SSYLoginItems.h"
+// #import "SSYLoginItems.h"
 #import "HTTPPOSTOperation.h"
 #import "NSImage+HUAdditions.h"
 #import "NSBitmapImageRep+HUAdditions.h"
@@ -44,7 +44,7 @@ extern int pngcrush_main(int argc, char *argv[]);
 	// init members
 	defaults = [NSUserDefaults standardUserDefaults];
 	uidRefDate = [NSDate dateWithTimeIntervalSince1970:1258600000];
-	uploadedScreenshots = [defaults objectForKey:@"screenshots"];
+	// uploadedScreenshots = [defaults objectForKey:@"screenshots"];
 	if (!uploadedScreenshots)
 		uploadedScreenshots = [NSMutableDictionary dictionary];
 	nCurrOps = 0;
@@ -217,7 +217,6 @@ extern int pngcrush_main(int argc, char *argv[]);
 	}
 	else {
 		[preprocessingWindow orderOut:self];
-		[preprocessingWindow release];
 		preprocessingWindow = nil;
 
 		if (statusItem) {
@@ -662,8 +661,7 @@ extern int pngcrush_main(int argc, char *argv[]);
 	NSURL *bundleURL = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] bundlePath] isDirectory:YES];
 	NSNumber *isLoginItem = nil;
 	NSNumber *isHidden = nil;
-	if ([SSYLoginItems isURL:bundleURL loginItem:&isLoginItem hidden:&isHidden error:&error])
-		openAtLogin = [isLoginItem boolValue];
+	openAtLogin = 0;
 	// else discard error
 	return openAtLogin;
 }
@@ -671,13 +669,6 @@ extern int pngcrush_main(int argc, char *argv[]);
 - (void)setOpenAtLogin:(BOOL)y {
 	NSError *error = nil;
 	openAtLogin = y;
-	if ([SSYLoginItems synchronizeLoginItemPath:[[NSBundle mainBundle] bundlePath] shouldBeLoginItem:openAtLogin setHidden:NO error:&error] == SSYSharedFileListResultFailed)
-	{
-		[[NSAlert alertWithError:error] runModal];
-	}
-	else {
-		[defaults setBool:YES forKey:@"openAtLoginIsSet"];
-	}
 }
 
 - (BOOL)showInDock {

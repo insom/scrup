@@ -23,7 +23,7 @@
 	if (isr) {
 		image = CGImageSourceCreateImageAtIndex(isr, 0, NULL);
 		if (image) {
-			imageProperties = (NSDictionary*)CGImageSourceCopyPropertiesAtIndex(isr, 0, (CFDictionaryRef)imageProperties);
+			imageProperties = (NSDictionary*)CFBridgingRelease(CGImageSourceCopyPropertiesAtIndex(isr, 0, (CFDictionaryRef)imageProperties));
 			imageUTType = (NSString*)CGImageSourceGetType(isr);
 		}
 	}

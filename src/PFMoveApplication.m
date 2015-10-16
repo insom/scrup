@@ -101,7 +101,7 @@ void PFMoveToApplicationsFolderIfNecessary() {
 #endif
 	
 	// Setup the alert
-	NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+	NSAlert *alert = [[NSAlert alloc] init];
 	{
 		NSString *informativeText = nil;
 		
@@ -260,7 +260,7 @@ void PFMoveToApplicationsFolderIfNecessary() {
 fail:
 	{
 		// Show failure message
-		NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+		NSAlert *alert = [[NSAlert alloc] init];
 		[alert setMessageText:kStrMoveApplicationCouldNotMove];
 		[alert runModal];
 	}

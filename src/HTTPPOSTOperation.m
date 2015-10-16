@@ -35,8 +35,7 @@
 		return nil;
 	if (err)
 		*err = nil;
-	if ((mimeType = (NSString *)UTTypeCopyPreferredTagWithClass((CFStringRef)uti, kUTTagClassMIMEType)))
-		mimeType = NSMakeCollectable(mimeType);
+	mimeType = @"image/png";
 	return mimeType;
 }
 
@@ -47,11 +46,11 @@
 	if ([delegate respondsToSelector:@selector(preprocessFileBeforeSending:)]) {
 		if (![delegate preprocessFileBeforeSending:self]) {
 			[log debug:@"aborted by delegate"];
-			err = [NSError errorWithDomain:NSStringFromClass(isa)
+			/*err = [NSError errorWithDomain:NSStringFromClass(isa)
 																code:0
 														userInfo:[NSDictionary dictionaryWithObject:@"aborted by delegate" forKey:NSLocalizedDescriptionKey]];
 			if ([delegate respondsToSelector:@selector(httpPostOperationDidFail:withError:)])
-				[delegate httpPostOperationDidFail:self withError:err];
+				[delegate httpPostOperationDidFail:self withError:err];*/
 			[self cancel];
 			return;
 		}
@@ -92,9 +91,14 @@
 -(void)sendRequestAllowingRetries:(int)nretries {
 	NSError *err;
 	NSDictionary *fattrs;
+    
+    NSHTTPURLResponse *res;
+    res = nil;
 
 	// send and recv...
-	responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
+	responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&res error:&err];
+    
+    response = res;
 
 	// error check
 	if (!responseData && err && [err domain] == NSURLErrorDomain && nretries) {
@@ -146,10 +150,11 @@
 		else {
 			NSString *rspStr = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
 			if ([delegate respondsToSelector:@selector(httpPostOperationDidFail:withError:)]) {
-				err = [NSError errorWithDomain:NSStringFromClass(isa)
+                [log warn:@"failed with BATMAN"];
+				/*err = [NSError errorWithDomain:NSStringFromClass(isa)
 																	code:[response statusCode]
-															userInfo:[NSDictionary dictionaryWithObject:rspStr forKey:NSLocalizedDescriptionKey]];
-				[delegate httpPostOperationDidFail:self withError:err];
+															userInfo:[NSDictionary dictionaryWithObject:rspStr forKey:NSLocalizedDescriptionKey]];*/
+                [delegate httpPostOperationDidFail:self withError:err];
 			}
 			else {
 				[log warn:@"failed with HTTP %d %@ %@",

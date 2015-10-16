@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,9 +31,8 @@
 		3A91998910657080002D0F4B /* NSTask+DPAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A91998810657080002D0F4B /* NSTask+DPAdditions.m */; };
 		3A919A0410657FF0002D0F4B /* NSString+DPAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A919A0310657FF0002D0F4B /* NSString+DPAdditions.m */; };
 		3A919A57106586E4002D0F4B /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A919A56106586E4002D0F4B /* Sparkle.framework */; };
-		3A919A621065874D002D0F4B /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3A919A56106586E4002D0F4B /* Sparkle.framework */; };
+		3A919A621065874D002D0F4B /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3A919A56106586E4002D0F4B /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		3A919A8C106590CC002D0F4B /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 3A919A8B106590CC002D0F4B /* dsa_pub.pem */; };
-		3A919AA3106599EE002D0F4B /* SSYLoginItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A919AA1106599EE002D0F4B /* SSYLoginItems.m */; };
 		3A9D2A5E1061B083008923FD /* status-item-standby.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A9D2A5B1061B083008923FD /* status-item-standby.png */; };
 		3A9D2A5F1061B083008923FD /* status-item-sending.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A9D2A5C1061B083008923FD /* status-item-sending.png */; };
 		3A9D2A601061B083008923FD /* status-item-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A9D2A5D1061B083008923FD /* status-item-selected.png */; };
@@ -174,8 +173,6 @@
 		3A919A0310657FF0002D0F4B /* NSString+DPAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+DPAdditions.m"; path = "src/NSString+DPAdditions.m"; sourceTree = "<group>"; };
 		3A919A56106586E4002D0F4B /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = frameworks/Sparkle.framework; sourceTree = "<group>"; };
 		3A919A8B106590CC002D0F4B /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dsa_pub.pem; path = resources/dsa_pub.pem; sourceTree = "<group>"; };
-		3A919AA1106599EE002D0F4B /* SSYLoginItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYLoginItems.m; path = src/SSYLoginItems.m; sourceTree = "<group>"; };
-		3A919AA2106599EE002D0F4B /* SSYLoginItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSYLoginItems.h; path = src/SSYLoginItems.h; sourceTree = "<group>"; };
 		3A9D2A5B1061B083008923FD /* status-item-standby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "status-item-standby.png"; path = "resources/status-item-standby.png"; sourceTree = "<group>"; };
 		3A9D2A5C1061B083008923FD /* status-item-sending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "status-item-sending.png"; path = "resources/status-item-sending.png"; sourceTree = "<group>"; };
 		3A9D2A5D1061B083008923FD /* status-item-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "status-item-selected.png"; path = "resources/status-item-selected.png"; sourceTree = "<group>"; };
@@ -422,8 +419,6 @@
 				3AE55FA610BC9566006A7F94 /* pngcrush */,
 				3A1C74FC10BB0F4500BC6030 /* PFMoveApplication.h */,
 				3A1C74FD10BB0F4500BC6030 /* PFMoveApplication.m */,
-				3A919AA2106599EE002D0F4B /* SSYLoginItems.h */,
-				3A919AA1106599EE002D0F4B /* SSYLoginItems.m */,
 				3AF2B0C610FE90610052B40E /* MAAttachedWindow.h */,
 				3AF2B0C710FE90610052B40E /* MAAttachedWindow.m */,
 			);
@@ -554,8 +549,11 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "scrup" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -677,7 +675,6 @@
 				3A91991E1065620D002D0F4B /* NSError+DPAdditions.m in Sources */,
 				3A91998910657080002D0F4B /* NSTask+DPAdditions.m in Sources */,
 				3A919A0410657FF0002D0F4B /* NSString+DPAdditions.m in Sources */,
-				3A919AA3106599EE002D0F4B /* SSYLoginItems.m in Sources */,
 				3ABE5EAF10B588700085BAC3 /* HTTPPOSTOperation.m in Sources */,
 				3A1C74FE10BB0F4500BC6030 /* PFMoveApplication.m in Sources */,
 				3A1C755010BB135D00BC6030 /* NSImage+HUAdditions.m in Sources */,
@@ -746,17 +743,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_ENABLE_OBJC_GC = supported;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INSTALL_PATH = /usr/local/lib;
 				PREBINDING = NO;
 				PRODUCT_NAME = pngcrush;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				VALID_ARCHS = "i386 ppc ppc64 ppc7400 ppc970 x86_64";
 			};
 			name = Debug;
@@ -765,7 +763,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_AUTO_VECTORIZATION = YES;
@@ -773,7 +772,7 @@
 				GCC_DYNAMIC_NO_PIC = YES;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_ENABLE_OBJC_GC = supported;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
@@ -784,7 +783,7 @@
 				INSTALL_PATH = /usr/local/lib;
 				PREBINDING = NO;
 				PRODUCT_NAME = pngcrush;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				VALID_ARCHS = "i386 ppc ppc64 ppc7400 ppc970 x86_64";
 				ZERO_LINK = NO;
 			};
@@ -794,7 +793,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -802,7 +803,7 @@
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_ENABLE_OBJC_GC = required;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -814,9 +815,10 @@
 				GCC_WARN_UNUSED_VALUE = YES;
 				INFOPLIST_FILE = resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "se.notion.${PRODUCT_NAME:identifier}";
 				PRODUCT_NAME = Scrup;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -824,13 +826,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/frameworks\"",
 				);
 				GCC_AUTO_VECTORIZATION = YES;
-				GCC_ENABLE_OBJC_GC = required;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
@@ -843,35 +847,35 @@
 				GCC_WARN_UNUSED_VALUE = YES;
 				INFOPLIST_FILE = resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "se.notion.${PRODUCT_NAME:identifier}";
 				PRODUCT_NAME = Scrup;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
